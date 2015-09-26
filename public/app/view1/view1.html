@@ -1,0 +1,15 @@
+<div ng-controller="View1Ctrl">
+<h1>Jim Sward</h1>
+<div ng-repeat="post in myposts track by $index" >
+<h2 ng-click="toView2( post.permalink )" class="clickable">{{post['title']}}</h2>
+Posted {{post.date}} <i>By {{post.author}}</i><br>
+<hr>
+{{post.body}}
+<br><br>
+<em>Filed Under</em>:
+<div ng-repeat="tag in post.tags track by $index">
+ <a href="/tag/{{tag}}">{{tag}}</a>
+</div>
+</div>
+</div>
+

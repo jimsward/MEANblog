@@ -1,0 +1,36 @@
+<!doctype HTML>
+<html>
+<head>
+<title>Create a new post</title>
+</head>
+<body>
+
+<!--{% if username %}
+Welcome {{username}}        <a href="/logout">Logout</a><p>
+{% else %}
+You are not logged in!        <a href="/login">Login</a> | <a href="/signup">Sign Up</a><p>
+{% endif %}
+<a href="/">Blog Home</a><br><br>-->
+<div ng-controller="View3Ctrl">
+<form ng-submit="submitPost()" class="navbar-form navbar-left" name="newpost">
+{{errors}}
+<h2>Title</h2>
+<input type="text" name="subject" ng-model="post.subject" size="120" placeholder="Subject" required><br>
+<div ng-messages="newpost.subject.$error" role="alert">
+<div ng-message="required">Please enter a title</div>
+</div>
+<h2>Blog Entry<h2>
+<div ng-messages="newpost.body.$error" role="alert">
+<div ng-message="required">Please enter a Post</div>
+</div>
+<textarea name="body" cols="57" rows="20" ng-model="post.body" required></textarea><br>
+<h2>Tags</h2>
+Comma separated, please<br>
+<input type="text" name="tags" size="120" ng-model="post.tags"><br>
+<input type="submit" value="Submit">
+
+
+</div>
+</body>
+</html>
+
