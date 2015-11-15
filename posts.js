@@ -39,10 +39,10 @@ function PostsDAO(db) {
         });
     }
 
-    this.getPosts = function(num, callback) {
+    this.getPosts = function( callback ) {
         "use strict";
 
-        posts.find().sort('date', -1).limit(num).toArray(function(err, items) {
+        posts.find().sort({'date' : -1}).toArray(function(err, items) {
             "use strict";
 
             if (err) return callback(err, null);
@@ -56,7 +56,7 @@ function PostsDAO(db) {
     this.getPostsByTag = function(tag, num, callback) {
         "use strict";
 
-        posts.find({ tags : tag }).sort('date', -1).limit(num).toArray(function(err, items) {
+        posts.find({ tags : tag }).sort({'date' : -1}).limit(num).toArray(function(err, items) {
             "use strict";
 
             if (err) return callback(err, null);
@@ -93,10 +93,10 @@ function PostsDAO(db) {
         });
     }
 
-    this.addComment = function(permalink, name, email, body, callback) {
+    this.addComment = function(permalink, name, email, body, date, callback) {
         "use strict";
 
-        var comment = {'author': name, 'body': body}
+        var comment = {'author': name, 'body': body, 'email' : email, 'date' : date}
 
         if (email != "") {
             comment['email'] = email
@@ -144,6 +144,19 @@ function PostsDAO(db) {
         // TODO: Final exam question - Increment the number of likes
 //callback( null, post);
     }
+	this.approveComments = function( apComments, callback ){
+		var selector = {}
+		apComments.forEach( function( value ){
+		selector['comments.' + value.comment_ordinal + '.approved'] = 1
+		var permalink = value.permalink	
+		posts.update( { 'permalink' : permalink }, { $set : selector }, function(err, modified ){
+			console.log('modified : ' + modified)
+			if (err) return callback(err, null)
+			callback(null, modified)
+			})
+		} )
+		}
+	
 }
 
 module.exports.PostsDAO = PostsDAO;

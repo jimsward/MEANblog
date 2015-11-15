@@ -1,0 +1,17 @@
+<div ng-controller="View4Ctrl" class="container">
+<table width="1000" border="1" cellpadding="2">
+  <tr>
+  	<th scope="col">Approve</th>
+    <th scope="col">Name</th>
+    <th scope="col">Comment</th>
+    <th scope="col">In Response To</th>
+  </tr>
+  <tr ng-repeat="comment in comments">
+  	<td scope="col"><input type="checkbox" ng-model="comment.approved" ng-true-value="1" ng-false-value="0"></td>
+    <td scope="col">{{comment.author}}</td>
+    <td scope="col">{{comment.body}}</td>
+    <td scope="col">{{comment.permalink}}</td>
+  </tr>  
+</table>
+<button ng-click="applyApprove()">Apply</button>
+</div>

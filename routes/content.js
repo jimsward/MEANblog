@@ -13,7 +13,7 @@ function ContentHandler (db) {
     this.displayMainPage = function(req, res, next) {
         "use strict";
 
-        posts.getPosts( 10, function(err, results) {
+        posts.getPosts( function(err, results) {
             "use strict";
 
             if (err) return next(err);
@@ -36,11 +36,7 @@ function ContentHandler (db) {
 
             if (err) return next(err);
 
-            return res.render('blog_template', {
-                title: 'blog homepage',
-                username: req.username,
-                myposts: results
-            });
+            return res.send( results )
         });
     }
 
@@ -68,8 +64,9 @@ function ContentHandler (db) {
         var name = req.body.commentName;
         var email = req.body.commentEmail;
         var body = req.body.commentBody;
+		var date = req.body.commentDate;
         var permalink = req.body.permalink;
-		console.log( name + email + body +  permalink )
+		console.log( name + email + body +  permalink + date )
 
         // Override the comment with our actual user name if found
         if (req.username) {
@@ -96,7 +93,7 @@ function ContentHandler (db) {
         }
 
         // even if there is no logged in user, we can still post a comment
-        posts.addComment(permalink, name, email, body, function(err, updated) {
+        posts.addComment(permalink, name, email, body, date, function(err, updated) {
             "use strict";
             if (err) return next(err);
             if (updated == 0) return res.redirect("/post_not_found");
@@ -204,6 +201,20 @@ function ContentHandler (db) {
 			if (err) return next(err)
 			res.send(post)
 		})
+		}
+	this.getPosts = function( req, res, next ){
+		posts.getPosts(  function(err, results) {
+            "use strict";
+            if (err) return next(err);
+			return res.send( results )
+		})
+		}
+	this.approvedComments = function( req, res, next ){
+		var approved = req.body
+		posts.approveComments( approved, function( err, result ){
+			if (err) return next(err)
+			res.end()
+			})
 		}
 }
 

@@ -1,65 +1,54 @@
-
-
-
-
 <!--{% if username %}
 Welcome {{username}}        <a href="/logout">Logout</a> | <a href="/newpost">New Post</a><p>
 {% else %}
 You are not logged in!        <a href="/login">Login</a> | <a href="/signup">Sign Up</a><p>
 {% endif %}-->
 <div ng-controller="View2Ctrl">
-
 <h2>{{post.title}}</h2>
 Posted {{post.date}}<i> By {{post.author}}</i><br>
 <hr>
-{{post.body}}
 
+<div ng-bind-html="post.body | unsafe" id="pbody"></div>
+<hr>
 <br><br>
 <em>Filed Under</em>:
 
 <div ng-repeat="tag in post.tags track by $index">    
-        <a href="/tag/{{tag}}">{{tag}}</a>    
+         <p ng-click="view1ByTag(tag)" class="clickable">{{tag}}</p>   
 </div>
 
 <br><br>
-Comments:
+<div id="comments">Comments:</div>
 
 <div ng-repeat="comment in post.comments track by $index">
 <form  method="POST" id="like">
 <input type="hidden" name="permalink", value="{{post.permalink}}">
 <input type="hidden" name="comment_ordinal", value="{{$index}}">
-Author: {{comment.author}}<br>
 Likes: {{comment.num_likes}} <input type="submit" value="Like" ng-click="submitLike($index)"></form><br>
+Submitted on {{comment.date}}<br><br> 
+Author: {{comment.author}}<br><br>
 {{comment.body}}<br>
 <hr>
 </div>
-
-
-
 <h3>Add a comment</h3>
-<form ng-submit="submitComment()">
+<form ng-submit="submitComment()" name="commentform">
 <input type="hidden" name="permalink" ng-model="data.permalink" value="{{post['permalink']}}">
 <h4>{{errors}}</h4>
 <b>Name</b> (required)<br>
 <input type="text" name="commentName" size="60" ng-model="data.commentName" required><br>
+<div ng-messages="commentform.commentName.$error" role="alert">
+<div ng-message="required">Please enter your name</div>
+</div>
 <b>Email</b> (optional)<br>
 <input type="text" name="commentEmail" size="60" ng-model="data.commentEmail"><br>
 <b>Comment</b><br>
 <textarea name="commentBody" cols="60" rows="10" ng-model="data.commentBody" required></textarea><br>
-<input type="submit" value="Submit">
-</form>
 
-<!--<form action="/newcomment" method="POST">
-<input type="hidden" name="permalink", value="{{post['permalink']}}">
-<h4>{{errors}}</h4>
-<b>Name</b> (required)<br>
-<input type="text" name="commentName" size="60" value="{{comment['name']}}"><br>
-<b>Email</b> (optional)<br>
-<input type="text" name="commentEmail" size="60" value="{{comment['email']}}"><br>
-<b>Comment</b><br>
-<textarea name="commentBody" cols="60" rows="10">{{comment['body']}}</textarea><br>
-<input type="submit" value="Submit">
-</form>-->
+<div ng-messages="commentform.commentBody.$error" role="alert">
+<div ng-message="required">Please enter a comment</div>
+</div>
+<input type="submit" value="Submit" id="submitComment">
+</form>
 </div>
 
 

@@ -1,4 +1,10 @@
 Blog project for M101JS
+Extended by Jim Sward to include :
+Removed Swig templates; client is now all angularjs
+Added date field to comments
+Admin for approving comments
+Text editor
+
 
 ./app.js - entry point
 ./package.json - npm package description

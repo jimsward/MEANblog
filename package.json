@@ -1,5 +1,5 @@
 {
-  "name": "blog",
+  "name": "MEANblog",
   "version": "0.0.0",
   "description": "Blog Project for M101JS",
   "main": "app.js",
@@ -7,7 +7,7 @@
     "bcrypt-nodejs": "~0.0.3",
     "consolidate": "~0.9.1",
     "express": ">=3.x",
-    "mongodb": "~1.3.9",
+    "mongodb": "^2.0.44",
     "swig": "~0.14.0",
     "validator": "~1.1.3"
   },
@@ -15,8 +15,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "",
-  "author": "Shaun Verch <shaun.verch@10gen.com>",
+  "repository": "https://github.com/jimsward/MEANblog",
+  "author": "Shaun Verch <shaun.verch@10gen.com>, Jim Sward <jim@jimsward.com>",
   "license": "BSD",
   "private": true
 }

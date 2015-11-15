@@ -12,6 +12,10 @@ footer {
     margin: 50px 0;
 }*/
 
+.container { padding : 0 }
+
+.navbar-form { padding : 0 }
+
 .navbar-fixed-top { text-align : center; }
 
 h2 { color : #337ab7 }
@@ -20,4 +24,15 @@ h2 { color : #337ab7 }
 
 li { display : inline-block }
 
-[ng-message|="required"] { color : red; font-size : 22px }
+[ng-message|="required"] { color : red; font-size : 1.5 em !important }
+
+hr { border-top: 1px solid #888; }
+
+#comments { color : #235580; font-size : 20px; margin-bottom : 20px;  }
+
+tbody { background-color : #fef7f1 }
+
+button { color : #235580; border-color: #235580;
+    margin-top: 5px; }
+	
+#submitComment { margin-bottom : 30px; }

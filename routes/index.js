@@ -13,6 +13,9 @@ module.exports = exports = function(app, db) {
 	app.get('/', contentHandler.displayLayout);
     // The main page of the blog
     app.get('/main', contentHandler.displayMainPage);
+	app.get('/posts', contentHandler.getPosts);
+	app.post( '/approved', contentHandler.approvedComments )
+
 
     // The main page of the blog, filtered by tag
     app.get('/tag/:tag', contentHandler.displayMainPageByTag);

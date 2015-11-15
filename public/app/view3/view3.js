@@ -9,10 +9,10 @@ angular.module('myApp.view3', ['ngRoute'])
   });
 }])
 
-.controller('View3Ctrl', [ '$routeParams', '$scope', '$http', '$route', function( $routeParams, $scope, $http, $route ) {
+.controller('View3Ctrl', [ '$routeParams', '$scope', '$http', '$route', '$location', function( $routeParams, $scope, $http, $route, $location) {
 	$scope.submitPost = function(){
 					$http.post( '/newpost', $scope.post ).then( function(){
-			alert( 'Post added.' )
+					$location.path( '/view1' )
 			})
 	}
 }]);

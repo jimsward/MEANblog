@@ -4,7 +4,6 @@
 <title>Create a new post</title>
 </head>
 <body>
-
 <!--{% if username %}
 Welcome {{username}}        <a href="/logout">Logout</a><p>
 {% else %}
@@ -19,17 +18,20 @@ You are not logged in!        <a href="/login">Login</a> | <a href="/signup">Sig
 <div ng-messages="newpost.subject.$error" role="alert">
 <div ng-message="required">Please enter a title</div>
 </div>
-<h2>Blog Entry<h2>
+<h2>Blog Entry</h2>
 <div ng-messages="newpost.body.$error" role="alert">
 <div ng-message="required">Please enter a Post</div>
 </div>
-<textarea name="body" cols="57" rows="20" ng-model="post.body" required></textarea><br>
+<!--<textarea name="body" cols="57" rows="20" ng-model="post.body" required></textarea><br>-->
+
+<div class="form-group">
+<div text-angular ng-model="post.body" name="content"></div>
+</div>
+
 <h2>Tags</h2>
 Comma separated, please<br>
-<input type="text" name="tags" size="120" ng-model="post.tags"><br>
+<input type="text" name="tags" size="120" ng-model="post.tags" required><br>
 <input type="submit" value="Submit">
-
-
 </div>
 </body>
 </html>
