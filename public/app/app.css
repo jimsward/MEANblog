@@ -31,9 +31,24 @@
 
 .container {
 	padding : 40px; margin : 40px;
-	border : 1px solid #000000;
+	border : 1px solid #ddd;
 }
-
+/*
 h1 {
 	text-align:center
 }
+*/
+#contact   { background-color: #FFFFFF;
+	width : 75% !important;
+    border: 1px solid #DADADA;
+    border-radius: 8px 8px 8px 8px;
+    padding: 25px 25px 25px 25px;
+}
+
+label { margin-right : 40px; }
+
+form#contact { margin-top : 20px; width : 600px !important; }
+
+textarea#message { width : 500px; height : 200px; margin-top : 10px }
+
+input#email, input#name { margin-bottom : 10px; }

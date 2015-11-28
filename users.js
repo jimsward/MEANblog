@@ -30,10 +30,10 @@ function UsersDAO(db) {
 
         users.insert(user, function (err, result) {
             "use strict";
-
+console.dir( result.ops[0])
             if (!err) {
                 console.log("Inserted new user");
-                return callback(null, result[0]);
+                return callback(null, result.ops[0]);
             }
 
             return callback(err, null);

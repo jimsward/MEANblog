@@ -1,17 +1,3 @@
-/*!
- * Start Bootstrap - Blog Post HTML Template (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
-/*body {
-    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-/*}
-
-footer {
-    margin: 50px 0;
-}*/
-
 .container { padding : 0 }
 
 .navbar-form { padding : 0 }
@@ -22,7 +8,7 @@ h2 { color : #337ab7 }
 
 .clickable { text-decoration: underline; cursor:pointer }
 
-li { display : inline-block }
+/* li { display : inline-block } */
 
 [ng-message|="required"] { color : red; font-size : 1.5 em !important }
 
@@ -36,3 +22,9 @@ button { color : #235580; border-color: #235580;
     margin-top: 5px; }
 	
 #submitComment { margin-bottom : 30px; }
+
+li { cursor : pointer; display : inline-block !important }
+
+td.label { color : #222222 }
+
+span { margin : 8px; cursor : pointer; }

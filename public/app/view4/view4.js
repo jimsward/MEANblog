@@ -28,7 +28,6 @@ angular.module('myApp.view4', ['ngRoute'])
 		angular.forEach( $scope.comments, function( value, key ){
 			if ( value.approved ) approved.push( value )
 			} )
-			console.log(approved)
 			$http.post( '/approved', approved ).success( function( result ){
 				console.dir(approved)
 				alert('POSTED')

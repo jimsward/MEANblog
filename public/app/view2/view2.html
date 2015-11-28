@@ -6,18 +6,18 @@ You are not logged in!        <a href="/login">Login</a> | <a href="/signup">Sig
 <div ng-controller="View2Ctrl">
 <h2>{{post.title}}</h2>
 Posted {{post.date}}<i> By {{post.author}}</i><br>
-<hr>
+
 
 <div ng-bind-html="post.body | unsafe" id="pbody"></div>
-<hr>
-<br><br>
+
+
 <em>Filed Under</em>:
 
 <div ng-repeat="tag in post.tags track by $index">    
          <p ng-click="view1ByTag(tag)" class="clickable">{{tag}}</p>   
 </div>
 
-<br><br>
+
 <div id="comments">Comments:</div>
 
 <div ng-repeat="comment in post.comments track by $index">
@@ -28,7 +28,7 @@ Likes: {{comment.num_likes}} <input type="submit" value="Like" ng-click="submitL
 Submitted on {{comment.date}}<br><br> 
 Author: {{comment.author}}<br><br>
 {{comment.body}}<br>
-<hr>
+
 </div>
 <h3>Add a comment</h3>
 <form ng-submit="submitComment()" name="commentform">

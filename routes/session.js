@@ -10,7 +10,7 @@ function SessionHandler (db) {
 
     this.isLoggedInMiddleware = function(req, res, next) {
         var session_id = req.cookies.session;
-		console.log('session')
+		console.log(req.cookies)
         sessions.getUsername(session_id, function(err, username) {
             "use strict";
 
@@ -63,14 +63,16 @@ function SessionHandler (db) {
 
     this.displayLogoutPage = function(req, res, next) {
         "use strict";
-
+console.log('username ' + req.username)
         var session_id = req.cookies.session;
         sessions.endSession(session_id, function (err) {
             "use strict";
 
             // Even if the user wasn't logged in, redirect to home
             res.cookie('session', '');
-            return res.redirect('/');
+			req.username = ""
+			
+            return res.send({username : ""}) //res.redirect('/app/index.html#/view1');
         });
     }
 
@@ -163,8 +165,8 @@ function SessionHandler (db) {
             console.log("welcome: can't identify user...redirecting to signup");
             return res.redirect("/signup");
         }
-
-        return res.render("welcome", {'username':req.username})
+console.log('line 166')
+        return res.send( {'username':req.username})
     }
 	
 	

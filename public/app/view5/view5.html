@@ -1,0 +1,33 @@
+<div ng-controller="View5Ctrl"
+    <h2>Login</h2>
+    <form   name="login" ng-submit="submitLogin()">
+      <table>
+        <tr>
+          <td class="label">
+            Username
+          </td>
+          <td>
+            <input type="text" name="username" ng-model="username">
+          </td>
+          <td class="error">
+          </td>
+        </tr>
+
+        <tr>
+          <td class="label">
+            Password
+          </td>
+          <td>
+            <input type="password" name="password" ng-model="password">
+          </td>
+          <td class="error">
+	    {{login_error}}
+            
+          </td>
+        </tr>
+
+      </table>
+
+      <input type="submit" >
+    </form>
+ </div>

@@ -1,12 +1,13 @@
 var SessionHandler = require('./session')
   , ContentHandler = require('./content')
-  , ErrorHandler = require('./error').errorHandler;
+  , ErrorHandler = require('./error').errorHandler
+  , SendEmail = require('./send')
 
 module.exports = exports = function(app, db) {
 
     var sessionHandler = new SessionHandler(db);
     var contentHandler = new ContentHandler(db);
-
+	var sendEmail = new SendEmail()
     // Middleware to see if a user is logged in
     app.use(sessionHandler.isLoggedInMiddleware);
 	//will redirect to the angular bootstrap page
@@ -45,6 +46,10 @@ module.exports = exports = function(app, db) {
     // Signup form
     app.get('/signup', sessionHandler.displaySignupPage);
     app.post('/signup', sessionHandler.handleSignup);
+	
+	app.post('/contact', contentHandler.contactForm)
+	console.dir(SendEmail)
+	app.post('/sendemail', sendEmail.send)
 
     // Error handling middleware
     app.use(ErrorHandler);

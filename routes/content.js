@@ -1,4 +1,5 @@
 var PostsDAO = require('../posts').PostsDAO
+	MessagesDAO = require('../messages').MessagesDAO
   , sanitize = require('validator').sanitize; // Helper to sanitize form input
 
 /* The ContentHandler must be constructed with a connected db */
@@ -6,13 +7,14 @@ function ContentHandler (db) {
     "use strict";
 
     var posts = new PostsDAO(db);
+	var messages = new MessagesDAO(db)
 	
 	this.displayLayout = function(req, res, next){
 	return res.redirect( 'app/index.html' )}//angular bootstrap
 
     this.displayMainPage = function(req, res, next) {
         "use strict";
-
+//console.dir(req)
         posts.getPosts( function(err, results) {
             "use strict";
 
@@ -215,6 +217,14 @@ function ContentHandler (db) {
 			if (err) return next(err)
 			res.end()
 			})
+		}
+	this.contactForm = function( req, res, next ){
+		var message = req.body
+		console.log(message)
+		messages.insertMessage( message, function( err, result ){
+			if (err) return next(err)
+			res.end()
+			} )
 		}
 }
 
