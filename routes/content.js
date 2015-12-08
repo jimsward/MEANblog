@@ -226,6 +226,14 @@ function ContentHandler (db) {
 			res.end()
 			} )
 		}
+	this.updatePost = function( req, res, next ){
+		var obj = req.body
+		console.log('req.body : ' + obj.body)
+		posts.updateBody( obj, function( err, result ){
+			if (err) return next(err)
+			res.end()
+			})
+		}
 }
 
 module.exports = ContentHandler;

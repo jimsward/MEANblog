@@ -156,6 +156,14 @@ function PostsDAO(db) {
 			})
 		} )
 		}
+	this.updateBody = function( obj, callback){
+		var permalink = obj.permalink,
+			body = obj.body
+		posts.update( { 'permalink' : permalink }, { $set : { 'body' : body } }, function( err, modified ){
+			if (err) return callback(err, null)
+			callback(null, modified)
+			}  )
+		}
 	
 }
 

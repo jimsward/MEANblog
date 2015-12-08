@@ -10,7 +10,7 @@ function SessionHandler (db) {
 
     this.isLoggedInMiddleware = function(req, res, next) {
         var session_id = req.cookies.session;
-		console.log(req.cookies)
+		
         sessions.getUsername(session_id, function(err, username) {
             "use strict";
 

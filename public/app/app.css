@@ -38,12 +38,14 @@ h1 {
 	text-align:center
 }
 */
-#contact   { background-color: #FFFFFF;
+#contact, #projects   { background-color: #FFFFFF;
 	width : 75% !important;
     border: 1px solid #DADADA;
     border-radius: 8px 8px 8px 8px;
     padding: 25px 25px 25px 25px;
+	margin-top : 20px;
 }
+#projects li { display : block !important }
 
 label { margin-right : 40px; }
 
@@ -52,3 +54,7 @@ form#contact { margin-top : 20px; width : 600px !important; }
 textarea#message { width : 500px; height : 200px; margin-top : 10px }
 
 input#email, input#name { margin-bottom : 10px; }
+
+a { text-decoration : none; }
+
+.pbody {border : 1px solid #bbb; border-radius : 6px; margin:  20px 0; box-shadow : 10px 5px 5px #bcbcbc}

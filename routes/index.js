@@ -50,6 +50,7 @@ module.exports = exports = function(app, db) {
 	app.post('/contact', contentHandler.contactForm)
 	console.dir(SendEmail)
 	app.post('/sendemail', sendEmail.send)
+	app.post('/updatepost', contentHandler.updatePost)
 
     // Error handling middleware
     app.use(ErrorHandler);

@@ -12,7 +12,9 @@ angular.module('myApp', [
   'myApp.view7',
   'myApp.view8',
   'myApp.view9',
-  'myApp.view10',  
+  'myApp.view10',
+  'myApp.view11',
+  'myApp.view12',    
   'myApp.version',
   'ngMessages',
   'textAngular'
@@ -57,6 +59,14 @@ config(['$routeProvider', function($routeProvider) {
 	  .when('/view10', {
         templateUrl: 'view10/view10.html',
         controller: 'view10Ctrl'
+      })
+	  .when('/view11', {
+        templateUrl: 'view11/view11.html',
+        controller: 'view11Ctrl'
+      })
+	  .when('/view12', {
+        templateUrl: 'view12/view12.html',
+        controller: 'view12Ctrl'
       })
 
 	  .when('/post/:permalink', {

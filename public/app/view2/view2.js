@@ -46,4 +46,9 @@ angular.module('myApp.view2', ['ngRoute'])
 		$location.path( '/view1' ).search( obj )
 		}
 
-}]);
+}])
+.filter('unsafe', function($sce) {
+    return function(val) {		
+        return $sce.trustAsHtml(val);
+    };
+})

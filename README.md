@@ -4,8 +4,11 @@ Removed Swig templates; client is now all angularjs
 Added date field to comments,
 Admin for approving comments,
 Text editor for new posts,
-Contact page; saves to mongodb and sends email to admin,
+Text editor to edit posts,
+Contact page; saves data to mongodb and sends it, via email, to admin,
 Separate password only admin area,
+Unit and end-to-end tests,
+JSDocs
 
 
 ./app.js - entry point
