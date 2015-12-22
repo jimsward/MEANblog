@@ -1,13 +1,12 @@
 <div ng-controller="view11Ctrl">
-<div ng-hide="user"><p>You are not logged in!</p><span ng-click="login()">Login  </span>|<span ng-click="signUp()">Sign  Up</span></div>
-<div ng-show="user"><span>Welcome {{username}}</span><span ng-click="logout()">LOGOUT</span><ul class="nav nav-tabs">  
-    <li><a href="#/view3">NEW POST</a></li>
-     <li><a href="#/view4">ADMIN</a></li>
-     <li><a href="#/view11">EDIT POST</a></li></ul></div>
+<!--<div ng-hide="user"><p>You are not logged in!</p><span ng-click="login()">Login  </span>|<span ng-click="signUp()">Sign  Up</span></div>
+<div ng-show="user"><span>Welcome {{username}}</span><span ng-click="logout()">LOGOUT</span><ul class="nav nav-tabs"></div> 
+-->
 
 <h1>Jim Sward</h1>
+<h3 id="selectpost">Select a Post to Edit</h3>
 <div ng-repeat="post in myposts track by $index" >
-<h2 ng-click="toEdit( post.permalink )" class="clickable">{{post['title']}}</h2>
+<h3 ng-click="toEdit( post.permalink )" class="clickable" id={{$index}}>{{post['title']}}</h3>
 Posted {{post.date}} <i>By {{post.author}}</i><br>
 <!--<hr>-->
 

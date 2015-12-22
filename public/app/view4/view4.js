@@ -15,10 +15,13 @@ angular.module('myApp.view4', ['ngRoute'])
 						angular.forEach( response.data, function( value, key ){//posts
 							
 							angular.forEach(value.comments, function( item, index ){//comments
+							if (item)
+							{
 								item.permalink = value.permalink
 								item.comment_ordinal = index
-							comments.push( item )	
-								})							
+								comments.push( item )	
+							}
+								})
 							})
 							$scope.comments = comments							
 						})//GET

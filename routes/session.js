@@ -39,10 +39,13 @@ function SessionHandler (db) {
 
             if (err) {
                 if (err.no_such_user) {
-                    return res.render("login", {username:username, password:"", login_error:"No such user"});
+					console.log('error handler')
+					var response = {"error" : "No such user"}
+                    return res.status(409).send(response);
                 }
                 else if (err.invalid_password) {
-                    return res.render("login", {username:username, password:"", login_error:"Invalid password"});
+					var response = {"error" : "Invalid password"}
+                    return res.status(409).send(response);
                 }
                 else {
                     // Some other kind of error
@@ -63,7 +66,7 @@ function SessionHandler (db) {
 
     this.displayLogoutPage = function(req, res, next) {
         "use strict";
-console.log('username ' + req.username)
+console.log('username ' + req.username + ' has left us')
         var session_id = req.cookies.session;
         sessions.endSession(session_id, function (err) {
             "use strict";
@@ -132,9 +135,10 @@ console.log('username ' + req.username)
 
                 if (err) {
                     // this was a duplicate
+	console.log('err code ' + typeof err.code)
                     if (err.code == '11000') {
-                        errors['username_error'] = "Username already in use. Please choose another";
-                        return res.render("signup", errors);
+                        var response = { "error" :"Username already in use. Please choose another" }
+                        return res.status(409).send( response );
                     }
                     // this was a different error
                     else {
@@ -154,7 +158,7 @@ console.log('username ' + req.username)
         }
         else {
             console.log("user did not validate");
-            return res.render("signup", errors);
+            return res.send( errors);
         }
     }
 

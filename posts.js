@@ -145,10 +145,13 @@ function PostsDAO(db) {
 //callback( null, post);
     }
 	this.approveComments = function( apComments, callback ){
-		var selector = {}
+		
 		apComments.forEach( function( value ){
+			console.log(value.comment_ordinal)
+			var selector = {}
 		selector['comments.' + value.comment_ordinal + '.approved'] = 1
 		var permalink = value.permalink	
+		console.dir(selector)
 		posts.update( { 'permalink' : permalink }, { $set : selector }, function(err, modified ){
 			console.log('modified : ' + modified)
 			if (err) return callback(err, null)

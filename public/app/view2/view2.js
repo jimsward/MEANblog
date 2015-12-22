@@ -47,8 +47,3 @@ angular.module('myApp.view2', ['ngRoute'])
 		}
 
 }])
-.filter('unsafe', function($sce) {
-    return function(val) {		
-        return $sce.trustAsHtml(val);
-    };
-})

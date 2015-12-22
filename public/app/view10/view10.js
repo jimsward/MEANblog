@@ -19,7 +19,7 @@ angular.module('myApp.view10', ['ngRoute'])
 				console.log('sent email message')
 				}))
 				.then( function(){
-					alert('Form submitted.')
+					//alert('Form submitted.')
 					$location.path('/view1')}) 
 		}
 }]);

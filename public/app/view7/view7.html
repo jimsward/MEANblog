@@ -1,5 +1,5 @@
 <div ng-controller="view7Ctrl">
-    Already a user? <a href="/app/index.html#/view5">Login</a><p>
+    <span>Already a user?</span> <span ng-click="redirect()">Login</span>
     <h2>Signup</h2>
     
     <form name="signup" ng-submit="submitSignup()">
@@ -57,7 +57,7 @@
         </tr>
       </table>
 
-      <input type="submit">
+      <input type="submit" id="submitsignup">
     </form>
 </div>
  

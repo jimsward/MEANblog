@@ -25,11 +25,13 @@ Posted {{post.date}}<i> By {{post.author}}</i><br>
 <form  method="POST" id="like">
 <input type="hidden" name="permalink", value="{{post.permalink}}">
 <input type="hidden" name="comment_ordinal", value="{{$index}}">
-Likes: {{comment.num_likes}} <input type="submit" value="Like" ng-click="submitLike($index)"></form><br>
+<br>
+Likes: {{comment.num_likes}} <input type="submit" value="Like" ng-click="submitLike($index)"></form>
+<div id="commentbox">
 Submitted on {{comment.date}}<br><br> 
 Author: {{comment.author}}<br><br>
 {{comment.body}}<br>
-
+</div>
 </div>
 <h3>Add a comment</h3>
 <form ng-submit="submitComment()" name="commentform">

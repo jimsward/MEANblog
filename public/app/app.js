@@ -3,18 +3,18 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.view3',
-  'myApp.view4',
-  'myApp.view5', 
-  'myApp.view6', 
-  'myApp.view7',
-  'myApp.view8',
-  'myApp.view9',
-  'myApp.view10',
-  'myApp.view11',
-  'myApp.view12',    
+  'myApp.view1',//home, listing of all posts, select title to get individual post (view2)
+  'myApp.view2',//indibidual post with comments and form to ad comments
+  'myApp.view3',//create post in editor
+  'myApp.view4',//choose to approve a comment, approved comments will appear with the post in view2
+  'myApp.view5',//login page
+  'myApp.view6',//welcome page
+  'myApp.view7',//signup page
+  'myApp.view8',//about page
+  'myApp.view9',//projects
+  'myApp.view10',//contact page; form is sent with contact info to the database and by email to adminstrator
+  'myApp.view11',//list of posts; select one to edit
+  'myApp.view12',//editor for post selected in view11    
   'myApp.version',
   'ngMessages',
   'textAngular'

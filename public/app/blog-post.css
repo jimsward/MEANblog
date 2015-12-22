@@ -1,22 +1,24 @@
-.container { padding : 0 }
+.container { padding : 0; border : 1px solid #1fa67b !important }
 
 .navbar-form { padding : 0 }
 
 .navbar-fixed-top { text-align : center; }
 
-h2 { color : #337ab7 }
+h1 { color : #00b7ff; }
+
+h2, h3 { color : #337ab7 }
 
 .clickable { text-decoration: underline; cursor:pointer }
 
 /* li { display : inline-block } */
 
-[ng-message|="required"] { color : red; font-size : 1.5 em !important }
+[ng-message|="required"] { color : #c50a2e; font-size : 1.5 em !important }
 
 hr { border-top: 1px solid #888; }
 
-#comments { color : #235580; font-size : 20px; margin-bottom : 20px;  }
+#comments { color : #235580; font-size : 20px; }
 
-tbody { background-color : #fef7f1 }
+table { background-color : #eee }
 
 button { color : #235580; border-color: #235580;
     margin-top: 5px; }
@@ -28,3 +30,13 @@ li { cursor : pointer; display : inline-block !important }
 td.label { color : #222222 }
 
 span { margin : 8px; cursor : pointer; }
+
+#commentbox { border : 1px solid #235580; padding : 15px; }
+
+#approve { padding-left : 15px; }
+
+.pbody { padding : 15px; }
+
+h3#selectpost { color : #c502ae }
+
+.error { color : #ff0f0f; }

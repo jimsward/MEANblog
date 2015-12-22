@@ -57,4 +57,4 @@ input#email, input#name { margin-bottom : 10px; }
 
 a { text-decoration : none; }
 
-.pbody {border : 1px solid #bbb; border-radius : 6px; margin:  20px 0; box-shadow : 10px 5px 5px #bcbcbc}
+.pbody, #commentbox {border : 1px solid #bbb; border-radius : 6px; margin:  20px 0; box-shadow : 10px 5px 5px #bcbcbc}

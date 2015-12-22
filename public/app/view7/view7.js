@@ -17,13 +17,20 @@ angular.module('myApp.view7', ['ngRoute'])
 	$scope.submitSignup = function(){
 		if ( $scope.password == $scope.verify )
 		{
+			
 			var data = { password : $scope.password, verify : $scope.verify, username : $scope.username, email : $scope.email }
-			$http.post( '/signup', data ).then( function(){
+			$http.post( '/signup', data ).then( function(response){
 			$location.path( '/view1' )
-			})
+			},
+			function errorCallback(response){
+				$scope.username_error = response.data.error
+				})
 		}
 		else
 		
 		alert( 'Passwords must match!' )
+		}
+	$scope.redirect = function(){
+		$location.path('/view5')
 		}
 }]);

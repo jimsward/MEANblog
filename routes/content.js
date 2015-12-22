@@ -14,7 +14,7 @@ function ContentHandler (db) {
 
     this.displayMainPage = function(req, res, next) {
         "use strict";
-//console.dir(req)
+console.dir(req.body)
         posts.getPosts( function(err, results) {
             "use strict";
 
@@ -44,7 +44,6 @@ function ContentHandler (db) {
 
     this.displayPostByPermalink = function(req, res, next) {
         "use strict";
-
         var permalink = req.params.permalink;
 		posts.getPostByPermalink(permalink, function(err, post) {
             "use strict";
@@ -213,6 +212,7 @@ function ContentHandler (db) {
 		}
 	this.approvedComments = function( req, res, next ){
 		var approved = req.body
+		console.dir(approved)
 		posts.approveComments( approved, function( err, result ){
 			if (err) return next(err)
 			res.end()

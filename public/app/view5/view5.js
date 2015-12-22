@@ -15,6 +15,9 @@ angular.module('myApp.view5', ['ngRoute'])
 	$scope.submitLogin = function(){
 		var data = { username : $scope.username, password : $scope.password }
 		$http.post( '/login', data ).then( function( response ){
-		$location.path('/view1')			})		
-		}
+			$location.path('/view1')},
+			function errorCallback(response){
+				$scope.login_error = response.data.error			
+					})//then		
+		}//submitLogin
 }]);
