@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<h4>A MongoDB Express Angular Nodejs Based Blog Platform</h4>
+
+<p>So, I've decided to blog about full stack javascript web development. It only makes sense that it should be done on a MEAN stack. I've looked around for something analogous to to Wordpress; didn't find it. The closest I've come across is a class project I completed for the MongDB University "MongoDB for Node.js developers" course.</p>
+
+<p>This was a very barebones app; just enough to simulate a collection of blog posts.The intent was to provide a learning tool for interacting with the database through the node driver. HTML was created on the server with Swig templates; the middleware : express. So, I converted all the Swig templates to Angular as a starting point. Once the Angular app was working, I added the following features:</p>
+
+<ul>
+<li>Added date field to comments</li>
+
+<li>Admin for approving comments</li>
+
+<li>Text editor for new posts</li>
+
+<li>Text editor to edit posts</li>
+
+<li>Contact page; saves data to mongodb and sends it, via email, to admin</li>
+
+<li>Separate password only admin area</li>
+
+<li>Unit and end-to-end tests</li>
+
+<li>JSDocs</li>
+<p>In short: With the Angular app running in the browser and the posts, messages, users, and sessions collections in Mongo, Angular connects to the database through expressjs middleware running on a Node server.</p>
+</ul>
+</body>
+</html>

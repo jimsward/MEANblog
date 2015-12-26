@@ -6,18 +6,18 @@
 <h1>Jim Sward</h1>
 <h3 id="selectpost">Select a Post to Edit</h3>
 <div ng-repeat="post in myposts track by $index" >
-<h3 ng-click="toEdit( post.permalink )" class="clickable" id={{$index}}>{{post['title']}}</h3>
+<h3 ng-click="toEdit( post.permalink )" class="clickable" >{{post['title']}}</h3>
 Posted {{post.date}} <i>By {{post.author}}</i><br>
 <!--<hr>-->
 
-<div class="pbody" ng-bind-html="post.body | unsafe" id={{$index}} class="pbody"></div>
+<!--<div class="pbody" ng-bind-html="post.body | unsafe" id={{$index}} class="pbody"></div>
+--><div ng-bind-html="post.body" id={{$index}} class="pbody"></div>
 
 <br>
 <em>Filed Under</em>:
-<div ng-repeat="tag in post.tags track by $index">
+<div ng-repeat="tag in post.tags">
 <p ng-click="byTag(tag)" class="clickable">{{tag}}</p>
 </div><!--inner ng-repeat-->
-<!--<hr>-->
 </div><!--outer ng-repeat-->
 </div><!--view11Ctrl-->
 

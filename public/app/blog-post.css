@@ -27,6 +27,8 @@ button { color : #235580; border-color: #235580;
 
 li { cursor : pointer; display : inline-block !important }
 
+div.pbody ul li { display : block !important }
+
 td.label { color : #222222 }
 
 span { margin : 8px; cursor : pointer; }

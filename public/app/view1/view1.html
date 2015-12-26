@@ -3,7 +3,8 @@
 <div ng-show="user"><span>Welcome {{username}}</span><span ng-click="logout()">LOGOUT</span><ul class="nav nav-tabs">  
     <li><a href="#/view3">NEW POST</a></li>
      <li><a href="#/view4">ADMIN</a></li>
-     <li><a href="#/view11">EDIT POST</a></li></ul></div>
+     <li><a href="#/view11">EDIT POST</a></li></ul>
+     </div>
 
 <h1>Jim Sward</h1>
 <div ng-repeat="post in myposts track by $index" >
@@ -11,14 +12,13 @@
 Posted {{post.date}} <i>By {{post.author}}</i><br>
 <!--<hr>-->
 
-<div ng-bind-html="post.body | unsafe" id={{$index}} class="pbody"></div>
+<!--<div ng-bind-html="post.body | unsafe" id={{$index}} class="pbody"></div>-->
+<div ng-bind-html="post.body" id={{$index}} class="pbody"></div>
 
 <br>
 <em>Filed Under</em>:
 <div ng-repeat="tag in post.tags track by $index">
 <p ng-click="byTag(tag)" class="clickable">{{tag}}</p>
 </div><!--inner ng-repeat-->
-<!--<hr>-->
 </div><!--outer ng-repeat-->
 </div><!--view1Ctrl-->
-

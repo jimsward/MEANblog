@@ -18,6 +18,7 @@ angular.module('myApp.view11', ['ngRoute'])
 		{
 		var html = angular.element('#' + i).text()
 		angular.element('#' + i).html(html)
+		console.log(angular.element('#' + i))
 		}
 	})
 	$scope.toEdit = function( permalink ){

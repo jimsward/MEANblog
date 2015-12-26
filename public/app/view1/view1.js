@@ -28,6 +28,7 @@ angular.module('myApp.view1', ['ngRoute'])
 		{
 		var html = angular.element('#' + i).text()
 		angular.element('#' + i).html(html)
+		console.log(angular.element('#' + i))
 		}
 		} )
 	$scope.toView2 = function( permalink ){	
@@ -38,6 +39,8 @@ angular.module('myApp.view1', ['ngRoute'])
 	$scope.byTag = function(tag){
 		$http.get('/tag/' + tag).success( function(response){
 			$scope.myposts = response
+			
+			
 			})
 		}
 	$scope.login = function(){
