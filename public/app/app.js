@@ -17,7 +17,8 @@ angular.module('myApp', [
   'myApp.view12',//editor for post selected in view11    
   'myApp.version',
   'ngMessages',
-  'textAngular'
+  'ngMessages'
+    
 ]).
 config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/view1', {
