@@ -13,7 +13,7 @@ var express = require('express')
 	MongoClient.connect('mongodb://heroku_v0znwk08:ob26stp5kamtac2qkm78uhqhm7@ds037145.mongolab.com:37145/heroku_v0znwk08', function(err, db) {
     "use strict";
     if(err) throw err;
-
+	var port = process.env.PORT || 8080;
     // Register our templating engine
     app.engine('html', cons.swig);
     app.set('view engine', 'html');
@@ -28,6 +28,6 @@ var express = require('express')
     // Application routes
     routes(app, db);
 
-    app.listen(8080);
+    app.listen(port);
     console.log('Express server listening on port 8080');
 });
