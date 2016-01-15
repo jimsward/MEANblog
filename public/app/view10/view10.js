@@ -12,7 +12,8 @@ angular.module('myApp.view10', ['ngRoute'])
 .controller('view10Ctrl', [ '$routeParams', '$scope', '$http', '$route', '$location', function( $routeParams, $scope, $http, $route, $location ) {
 	$scope.contact = {}
 	$scope.contactform = function(){
-		var data = $scope.contact
+		var text = 'name : ' + $scope.contact.name  + '\n'  + 'email : ' + $scope.contact.email + '\n' + 'message : ' + $scope.contact.message
+		var data = { 'text' : text, email : 'jim@jimsward.com' }
 		$http.post('/contact', data).then(function(data){//add document to the messages collection
 		})
 		.then($http.post('/sendemail', data).then( function(){//send email with contact form data

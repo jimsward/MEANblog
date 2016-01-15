@@ -1,5 +1,6 @@
  var UsersDAO = require('../users').UsersDAO
-  , SessionsDAO = require('../sessions').SessionsDAO;
+  , SessionsDAO = require('../sessions').SessionsDAO
+  , randomCharString = require('./randomCharString')
 
 /* The SessionHandler must be constructed with a connected db */
 function SessionHandler (db) {
@@ -124,18 +125,18 @@ console.log('username ' + req.username + ' has left us')
 
         var email = req.body.email
         var username = req.body.username
-        var password = req.body.password
-        var verify = req.body.verify
+       
 
         // set these up in case we have an error case
         var errors = {'username': username, 'email': email}
-        if (validateSignup(username, password, verify, email, errors)) {
+		
+      var password = randomCharString()
+			
             users.addUser(username, password, email, function(err, user) {
                 "use strict";
 
                 if (err) {
-                    // this was a duplicate
-	console.log('err code ' + typeof err.code)
+                    // this was a duplicate	
                     if (err.code == '11000') {
                         var response = { "error" :"Username already in use. Please choose another" }
                         return res.status(409).send( response );
@@ -152,15 +153,11 @@ console.log('username ' + req.username + ' has left us')
                     if (err) return next(err);
 
                     res.cookie('session', session_id);
-                    return res.redirect('/welcome');
+					var user = { 'username' : username, 'password' : password, 'email' : email }
+                    return res.send(user);
                 });
             });
         }
-        else {
-            console.log("user did not validate");
-            return res.send( errors);
-        }
-    }
 
     this.displayWelcomePage = function(req, res, next) {
         "use strict";

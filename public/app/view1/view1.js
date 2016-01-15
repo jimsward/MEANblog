@@ -28,7 +28,6 @@ angular.module('myApp.view1', ['ngRoute', 'ngSanitize'])
 		{
 		var html = angular.element('#' + i).text()
 		angular.element('#' + i).html(html)
-		console.log(angular.element('#' + i))
 		}
 		} )
 	$scope.toView2 = function( permalink ){	
@@ -47,7 +46,7 @@ angular.module('myApp.view1', ['ngRoute', 'ngSanitize'])
 		$location.path('/view5')
 		}
 	$scope.signUp = function(){
-		$location.path('/view7')
+		$location.path('/view13')
 		}
 	$scope.logout = function(){		
 		$http.get( '/logout' ).then( function(response){

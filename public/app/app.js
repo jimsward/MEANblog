@@ -9,12 +9,13 @@ angular.module('myApp', [
   'myApp.view4',//choose to approve a comment, approved comments will appear with the post in view2
   'myApp.view5',//login page
   'myApp.view6',//welcome page
-  'myApp.view7',//signup page
+  'myApp.view7',//signup page - version 1
   'myApp.view8',//about page
   'myApp.view9',//projects
   'myApp.view10',//contact page; form is sent with contact info to the database and by email to adminstrator
   'myApp.view11',//list of posts; select one to edit
-  'myApp.view12',//editor for post selected in view11    
+  'myApp.view12',//editor for post selected in view11
+  'myApp.view13',//new signup page   
   'myApp.version',
   'ngMessages',
   'ngMessages'
@@ -68,6 +69,10 @@ config(['$routeProvider', function($routeProvider) {
 	  .when('/view12', {
         templateUrl: 'view12/view12.html',
         controller: 'view12Ctrl'
+      })
+	  .when('/view13', {
+        templateUrl: 'view13/view13.html',
+        controller: 'view13Ctrl'
       })
 
 	  .when('/post/:permalink', {

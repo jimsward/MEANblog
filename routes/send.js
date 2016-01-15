@@ -11,17 +11,17 @@ function SendEmail() {
     }
 	this.send = function(req, res) {
 		console.log('request : ' + req.body)
-    var transporter = nodemailer.createTransport({
+    var transporter = nodemailer.createTransport("SMTP",{
         service: 'Yahoo',
         auth: {
             user: 'guernevilleguys@yahoo.com', //  email id
             pass: 'polello' //  password
         }
     });
-	var text = 'name : ' + req.body.name + '\n' + 'email : ' + req.body.email +'\n' + 'message : ' + req.body.message
+	var text = req.body.text
 	var mailOptions = {
     from: 'guernevilleguys@yahoo.com>', 
-	to: 'jim@jimsward.com',
+	to: req.body.email,
     subject: 'New contact form',
     text: text // plaintext body
     };
@@ -31,7 +31,7 @@ function SendEmail() {
         console.log(error);
         res.json({yo: 'error'});
     }else{
-        console.log('Message sent: ' + info.response);
+        console.log('Message sent: ' + info.message);
         res.json({yo: info.response});
     };
 });
