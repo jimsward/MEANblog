@@ -1,3 +1,4 @@
+
 'use strict';
 
 angular.module('myApp.view12', ['ngRoute'])
@@ -10,14 +11,16 @@ angular.module('myApp.view12', ['ngRoute'])
 }])
 
 .controller('view12Ctrl', [ '$routeParams', '$scope', '$http', '$route', '$location', function( $routeParams, $scope, $http, $route, $location ) {
-	var permalink = $routeParams.permalink
+	var permalink = $routeParams.permalink	
 	$http.get('/post/' + permalink).then( function( response ){
 		$scope.post = response.data
 	})
 	$scope.submitEdit = function(){
 		var obj = {}
+		
 		obj.permalink = permalink
 		obj.body = $scope.post.body
+		console.dir(obj)
 	$http.post('/updatepost', obj)
 	.then( function( response ){
 		$location.path('/view1')

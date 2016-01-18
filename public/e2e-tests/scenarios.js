@@ -110,19 +110,24 @@ describe('my app', function() {
     });
 
     it('should render view12 when user clicks on a post', function() {
-		element(by.id('0')).click()
+		element(by.css('h3.clickable:first-child')).click()
      expect(element(by.id('submitedit')).isDisplayed()).toBe(true);
     });
 
   });  
-   describe('view12', function() {
+  
+     describe('view13', function() {
     beforeEach(function() {
-      browser.get('index.html#/view12');
+      browser.get('index.html#/view13');
     });
 
-    it('should redirect to view1 when user clicks submit', function() {
-		element(by.id('submitedit')).click();
- expect(browser.getLocationAbsUrl()).toMatch("/view1");
+    it('should return username already exists error if it does', function() {
+		element(by.model('username')).sendKeys("nnn");
+		 element(by.model('email')).sendKeys("nnn");
+				 
+		 element(by.id('submitsignup')).click();
+		
+		 expect(browser.getLocationAbsUrl()).toMatch("/view1");
      });
 
   });  
