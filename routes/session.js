@@ -60,7 +60,8 @@ function SessionHandler (db) {
                 if (err) return next(err);
 
                 res.cookie('session', session_id);
-                return res.redirect('/welcome');
+				var user = {'username' : username}
+                return res.send(user);
             });
         });
     }

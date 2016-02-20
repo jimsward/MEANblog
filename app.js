@@ -7,10 +7,10 @@ var express = require('express')
   , cookieParser = require( 'cookie-parser' )
   , bodyParser = require( 'body-parser' )
 
-//MongoClient.connect('mongodb://jimsward:polello1@ds045757.mongolab.com:45757/checking', function(err, db) {
 //MongoClient.connect('mongodb://localhost:27017/blog', function(err, db) {
 //new mongolab connection
-	MongoClient.connect('mongodb://heroku_v0znwk08:ob26stp5kamtac2qkm78uhqhm7@ds037145.mongolab.com:37145/heroku_v0znwk08', function(err, db) {
+var uri = process.env.MONGOLAB_URI || process.argv[2]
+	MongoClient.connect( uri, function(err, db) {
     "use strict";
     if(err) throw err;
 	var port = process.env.PORT || 8080;

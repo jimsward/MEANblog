@@ -8,7 +8,7 @@
 
 <h1>Jim Sward</h1>
 <div ng-repeat="post in myposts track by $index" >
-<h3 ng-click="toView2( post.permalink )" class="clickable">{{post['title']}}</h3>
+<h3 ng-click="toView2( post.permalink )" class="clickable">{{post.title}}</h3>
 Posted {{post.date}} <i>By {{post.author}}</i><br>
 <!--<hr>-->
 

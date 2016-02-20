@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<h4>Deploy Your Node App to Heroku</h4>
+
+<p>Now that I've deployed a few Nodejs apps to Heroku, I'm seeing a pattern of a sequence of steps to get my code from a repo to Heroku and deploy.</p>
+
+<p>This assumes the goal of a workflow where every push to github will deploy to Heroku.</p>
+<p>First, prep the app. We need a Procfile in the root directory. We only have one process - a web process - so, the file consists of one line : 'web: node app'. Or replace the value after the colon with whatever command line you use to start your app. Heroku has some problems with bower_install called from a package.json; I put all the bower_components (angular stuff) on cdns. </p>
+
+<ul>
+<li>Clone the app from github</li>
+
+<li>cd to the app's newly created repo</li>
+
+<li>heroku create appname (creates the app) Heroku assign a name and you will see it below the command line</li>
+
+<li>git push heroku master (deploys the app)
+</li>
+
+<li>Launch the app from a browser using the assigned app name</li>
+
+<li>Go to the Heoku Dashboard; click the app name; click deploy; go to Connect to Github and choose a repository to connect to for deploys</li>
+
+<li>Go down two sections and enable automatic deploys</li>
+
+<li>Now, every time you push to this repo on Github the app will automatically deploy.</li>
+</ul>
+<p>That's pretty much it.</p>
+
+</body>
+</html>

@@ -16,8 +16,7 @@ angular.module('myApp.view12', ['ngRoute'])
 		$scope.post = response.data
 	})
 	$scope.submitEdit = function(){
-		var obj = {}
-		
+		var obj = {}		
 		obj.permalink = permalink
 		obj.body = $scope.post.body
 		console.dir(obj)
