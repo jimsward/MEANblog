@@ -6,32 +6,35 @@
 </head>
 
 <body>
-<h4>Deploy Your Node App to Heroku</h4>
+<h4>Cloud Based Bookkeeping App</h4>
 
-<p>Now that I've deployed a few Nodejs apps to Heroku, I'm seeing a pattern of a sequence of steps to get my code from a repo to Heroku and deploy.</p>
+<p>We are deploying a demonstration version of our bookkeeping app which for the time being we're calling "books'.</p>
 
-<p>This assumes the goal of a workflow where every push to github will deploy to Heroku.</p>
-<p>First, prep the app. We need a Procfile in the root directory. We only have one process - a web process - so, the file consists of one line : 'web: node app'. Or replace the value after the colon with whatever command line you use to start your app. Heroku has some problems with bower_install called from a package.json; I put all the bower_components (angular stuff) on cdns. </p>
-
+<p>This is probably an abbreviated "Quickbooks"; since it was inspired by the shortcomings of quickbooks online.</p>
+<p>We have a long and sad history with intuit's products.</p>
+<p>Background : Starting in the 90's we were using the desktop version. Being located in a fairly remote area with lots of giant redwoods we tend to we tend to have a lot of power outages. The desktop would not only loose everything sincse the last backup
+ The data file would be unreadable if the program was not shutdown properly and a backup was useless. This usually meant, at a minimum, reinstalling quickbooks or, at times, reinstalling the OS. 
+  When intuit came up with the cloud-based QuickBooks Online, about 8 or nine years ago, we signed up. Long story short : Disaster.</p>
+  <p>My research shows that, although they are not at all happy, most folks stick with intuit products because intuit has their data. My solution was to use quickbooks' export feature; import to mongo; use node/express to 
+   serve up the data to angular</p>
+   <h6>Features:</h6>
 <ul>
-<li>Clone the app from github</li>
+<li>User authentication</li>
 
-<li>cd to the app's newly created repo</li>
+<li>Fully searchable Check Register, with full CRUD operations</li>
 
-<li>heroku create appname (creates the app) Heroku assign a name and you will see it below the command line</li>
+<li>Maintain Customer data, invoices, and reports</li>
 
-<li>git push heroku master (deploys the app)
-</li>
+<li>Customizable reports</li>
 
-<li>Launch the app from a browser using the assigned app name</li>
+<li>Tax data available</li>
 
-<li>Go to the Heoku Dashboard; click the app name; click deploy; go to Connect to Github and choose a repository to connect to for deploys</li>
+<li>Import data (as csv) from quickbooks and elsewhere</li>
 
-<li>Go down two sections and enable automatic deploys</li>
+<li>(for the future) Inventory and Payroll</li>
 
-<li>Now, every time you push to this repo on Github the app will automatically deploy.</li>
 </ul>
-<p>That's pretty much it.</p>
+
 
 </body>
 </html>

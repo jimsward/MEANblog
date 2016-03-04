@@ -6,6 +6,7 @@ Admin for approving comments,
 Text editor for new posts,
 Text editor to edit posts,
 Contact page; saves data to mongodb and sends it, via email, to admin,
+Generate random password and email it to a new user, 
 Separate password only admin area,
 Unit and end-to-end tests,
 JSDocs
@@ -17,5 +18,6 @@ JSDocs
 ./posts.js - Posts Data Access Helper
 ./sessions.js - Sessions Data Access Helper
 ./users.js - Users Data Access Helper
+./messages.js - Messages Data Access Helper for messages submitted from contact form
 
 
