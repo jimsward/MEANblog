@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <style>code {background-color: #dddddd}</style>
+<meta charset="utf-8">
+<title>A Stubbed Out MEAN App</title>
+</head>
+
+<body>
+<h4>AngularJS Promises</h4>
+
+<p>Angular uses the $q - as in queue - service to create a deferred object. So you end up with a constructor for a deferred object.
+    Inject $q and then: <code>$q.defer(resolver)</code> where resolver is a function with two arguments: a resolve function and a reject function.
+    A new promise instance is created when a deferred instance is created and can be retrieved by calling deferred.promise; i.e. promise is a property of the deferred object
+    and has access to the resolve and reject methods. <code>deferred.promise</code> has a  method, <code>then</code>. Then takes callbacks as arguments and calls either the
+    successCallback or errorCallback, or notifyCallback, based on the status of the deferred object at the time of resolution.
+</p>
+<p>Angular doesn't use javascript's built in queue of callback functions - the event loop - to handle the callbacks at the heart of all these promises. Instead,
+it uses the $digest cycle; mainly to efficiently keep $scope up to date. This applies to AngularJs versions 1.x. Version 2, still in beta, will probably use the native javascript event
+loop and observables. The $http service takes care of all the low level $q stuff for you and just returns a promise. So all you need to do is <code>then</code> it. $httpProvider
+    has the interceptors property: an array of
+service factories that pre-process requests and post-process responses. So, if you want to do something with all your $http calls  before the request and/or after the response, create an
+    object via a factory with these functions/properties: request, requestError, response, and/or responseError. Push these objects on the $httpProvider.interceptors array in execution
+    order - they will execute in reverse order for the responses.
+</p>
+
+</body>
+</html>
