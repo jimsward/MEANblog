@@ -46,10 +46,11 @@ function UsersDAO(db) {
         // Callback to pass to MongoDB that validates a user document
         function validateUserDoc(err, user) {
             "use strict";
-
             if (err) return callback(err, null);
 
             if (user) {
+                console.log(err + '  ' + password)
+
                 if (bcrypt.compareSync(password, user.password)) {
                     callback(null, user);
                 }

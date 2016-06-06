@@ -54,10 +54,14 @@ config(['$routeProvider', function($routeProvider) {
         templateUrl: 'view8/view8.html',
         controller: 'view8Ctrl'
       })
-	    .when('/view9', {
-        templateUrl: 'view9/view9.html',
-        controller: 'view9Ctrl'
-      })
+        .when('/view9', {
+            templateUrl: 'view9/view9.html',
+            controller: 'view9Ctrl'
+        })
+        .when('/projects', {
+            templateUrl: 'view9/view9.html',
+            controller: 'view9Ctrl'
+        })
 	  .when('/view10', {
         templateUrl: 'view10/view10.html',
         controller: 'view10Ctrl'
@@ -83,6 +87,10 @@ config(['$routeProvider', function($routeProvider) {
         templateUrl: 'view6/view6.html',
         controller: 'View6Ctrl'
       })
+        .when('/login', {
+            templateUrl: 'view5/view5.html',
+            controller: 'View5Ctrl'
+        })
 	  
   $routeProvider.otherwise({redirectTo: '/view1'});
 }]);

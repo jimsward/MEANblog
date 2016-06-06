@@ -14,6 +14,7 @@ function ContentHandler (db) {
 
     this.displayMainPage = function(req, res, next) {
         "use strict";
+        console.log('username ' + req.username)
         posts.getPosts( function(err, results) {
             "use strict";
 
