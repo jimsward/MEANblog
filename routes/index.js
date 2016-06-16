@@ -3,7 +3,7 @@ var SessionHandler = require('./session')
   , ErrorHandler = require('./error').errorHandler
   , SendEmail = require('./send')
 
-module.exports = exports = function(app, db) {
+module.exports =  function(app, db) {
 
     var sessionHandler = new SessionHandler(db);
     var contentHandler = new ContentHandler(db);
