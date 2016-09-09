@@ -9,45 +9,60 @@
   <title>Jim's Blog</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="boilers/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="boilers/html5-boilerplate/dist/css/main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <link rel="stylesheet" href="bootstrap.min.css">
   <link rel="stylesheet" href="blog-post.css">
   <script src="boilers/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-  <!--<link rel='stylesheet' href='dist/textAngular.css'>-->
   <link rel='stylesheet' href='app.css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
 </head>
-<body>
+<body layout="column" style="width : 1015px; margin:auto">
+<md-toolbar style="position : fixed; width:inherit; text-align: center; font-family: 'Roboto'">Jim Sward on Javascript</md-toolbar>
+<md-toolbar style="position : fixed; width:inherit; text-align: center; font-family: 'Roboto'; top:64px; background-color: white">
+  <div  layout-align="left" >
+    <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+      <md-nav-item md-nav-href="#/view1" name="home">HOME</md-nav-item>
+      <md-nav-item md-nav-href="#/view8" name="about">ABOUT</md-nav-item>
+      <md-nav-item md-nav-href="#/view9" name="projects">PROJECTS</md-nav-item>
+      <md-nav-item md-nav-href="#/view10" name="contact">CONTACT</md-nav-item>
+    </md-nav-bar>
+  </div>
 
-	<div class="container">
-	<ul class="nav nav-tabs">  
-    <li><a href="#/view1">HOME</a></li>
-    <li><a href="#/view8">ABOUT</a></li>
-    <li><a href="#/view9">PROJECTS</a></li>
-    <li><a href="#/view10">CONTACT</a></li>    
-  	</ul>
+</md-toolbar>
 	
     
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-
+<div class="container">
+<md-content>
   <div ng-view></div>
-
- 	</div>
+</md-content>
+  <footer>
+    <div layout="row" layout-align="center center">
+      <p>Jim Sward &copy; 2016. All content is the property of Jim Sward</p>
+    </div>
+  </footer>
+</div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.min.js"></script>
-<!--  <script src='dist/textAngular-rangy.min.js'></script>
-  <script src='dist/textAngular-sanitize.min.js'></script>
-  <script src='dist/textAngular.min.js'></script>
---> 
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css' type='text/css' media='all' />
+    <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js'></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-animate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-aria.js"></script>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-messages.js"></script>
   <script src="app.js"></script>

@@ -7,22 +7,24 @@
 </head>
 
 <body>
-<h4>AngularJS 2</h4>
+<h4>Angular Material Untangled</h4>
 
-<p>Anyone with any interest in Angular knows Angular 2 is somewhere on the horizon. As we approach the horizon the time has come to consider: At what point would it be wise
-    to migrate to version 2?
+<p>Angular Material, Angularjs' attempt to implement Google's Material Design Specification, involves a lot of directives, services, theming, css, and ancillary crud. The end product is
+ for the most part, great; particularly the navbar, input widget, tabs, and toolbars. But, the API is extremely new and, so, less than stable.
+    Which means a lot of extra work and/or workarounds. After seeing a few examples of their UI I decided it would be well worth the extra effort</p>
 
-</p>Looking at this from my point of view: It's too soon to even consider the changes involved. I started with Angular 1.2 about two years ago and am on 1.4.7 and looking at 1.5.7 in
-the near future. Along with some enhancements and bug fixes, 1.5 is a transitional upgrade introducing features that will make a changeover to 2.x a little easier, while not making any
- monumental changes to our current code. And then: Angular has a tool - ngUpgrade - that helps you handle the next step; upgrading to Angular 2. I don't know how well it works. Adding yet another
-step in the process seems to complicate things even further. But, if it works, the ability to change your existing code a little at a time sounds less stressful than doing it all at once.
-<p>I remain quite satisfied with Angular 1. The only major flaw I've encountered is the way the digest burps when given a $apply from a source outside Angular - the "digest already in progress"
-    error. Using $timeout to wait for a new cycle is a kluge, but it works.
+<p>The documentation, as with most Angular related APIs, is sparse at best. But, when I saw what it has to offer design-wise, I decided to discount the challenges and dig right in.</p>
+<p>First, you'll need an Angular app you can use to apply ngMaterial. You'll need Angular to be at least version 1.4. The version number of the angular core file and the other required files,
+    angular-animate.js, angular-aria.js, and angular-messages need to be the same and angular-material.js should be the latest release - currently 1.1.1. Troubleshooting: once you're sure you have no typos or errors
+    in logic, look at version numbers as the most likely cause of unwanted behavior. Since the API is relatively new, you will most likely need to have a look at the source. It's all in angular-material.js.
+    The code itself is fairly well documented. Expect to tweak your app some to get around some of the limitations and unexpected behavior introduced by ngMaterial.</p>
+
+<p>The one thing lacking in ngMaterial is a set of directives for tables and their children. Since our accounting package makes heavy use of tables - check register, reports, customer data,
+     invoices, all include tabular data - I looked around for something to get my tables to fit in with the rest of the site. I found two repos on github that address this issue: mdDataTable and md-data-table. Confusing?
+    I looked at both. I was looking for well structured code and usability. I chose the hyphenated one; largely based on the ease of building the demo on my machine.
 </p>
-<p>Using Angular 2 in a brand new project is a different story. I wouldn't hesitate to do so in about 6 months. It just got out of beta and the official release is still not available.
-It has been my experience that being an earlier adopter is nearly never worth all the stress - and there will be stress - with the exception of evaluation and/or amusement. The
-enticement to early adoption might be gains in speed and efficiency. For me, the trade off in dev time lost to bugs and learning something that's not yet stable is not worth it.
-
-</p>
+<p>For the most part, I am really happy with the results. Like I said, it takes some tinkering, but the result is impressive. We tested it on the three major browsers. I works well on
+all of them. IE is much slower and not as pleasant looking. This may derive from ngMaterial's use of flexbox for layouts. This was my first real immersion in the flexbox technology.
+ Although I was quite new to it, I found it really simple to learn and to use.</p>
 </body>
 </html>

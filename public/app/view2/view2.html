@@ -19,7 +19,7 @@ Posted {{post.date}}<i> By {{post.author}}</i><br>
 </div>
 
 
-<div id="comments">Comments:</div>
+<div id="comments" ng-show="showComments">Comments:</div>
 
 <div ng-repeat="comment in post.comments track by $index">
 <form  method="POST" id="like">
@@ -33,24 +33,37 @@ Author: {{comment.author}}<br><br>
 {{comment.body}}<br>
 </div>
 </div>
-<h3>Add a comment</h3>
-<form ng-submit="submitComment()" name="commentform">
+    <md-toolbar class="contact" id="commentTB">Add a Comment</md-toolbar>
+<form  name="commentform"  id="commentform">
+
 <input type="hidden" name="permalink" ng-model="data.permalink" value="{{post['permalink']}}">
 <h4>{{errors}}</h4>
-<b>Name</b> (required)<br>
-<input type="text" name="commentName" size="60" ng-model="data.commentName" required><br>
+    <div>
+    <md-input-container>
+
+<label>Name</label>
+<input type="text" name="commentName" size="60" ng-model="data.commentName" required>
 <div ng-messages="commentform.commentName.$error" role="alert">
 <div ng-message="required">Please enter your name</div>
 </div>
-<b>Email</b> (optional)<br>
-<input type="text" name="commentEmail" size="60" ng-model="data.commentEmail"><br>
-<b>Comment</b><br>
-<textarea name="commentBody" cols="60" rows="10" ng-model="data.commentBody" required></textarea><br>
-
+    </md-input-container>
+    </div>
+    <div>
+    <md-input-container>
+    <label>Email</label>
+<input type="text" name="commentEmail" ng-model="data.commentEmail">
+    </md-input-container>
+    </div>
+<div>
+    <md-input-container>
+    <label>Comment</label><br>
+<textarea  id="commentBody"  ng-model="data.commentBody" required></textarea>
+        </md-input-container>
+</div>
 <div ng-messages="commentform.commentBody.$error" role="alert">
 <div ng-message="required">Please enter a comment</div>
 </div>
-<input type="submit" value="Submit" id="submitComment">
+    <md-button class="md-accent md-raised" ng-click="submitComment()">Submit Comment</md-button>
 </form>
 </div>
 

@@ -14,7 +14,9 @@ angular.module('myApp.view2', ['ngRoute'])
 	{
 	var permalink = $routeParams.permalink	
 	$http.get('/post/' + permalink).then( function( response ){
-		var tempArr = [] 
+		var tempArr = []
+		var showComments = false
+		if (response.data.length) showComments = true
 		angular.forEach( response.data.comments, function( value, key ){
 			if (value.approved )
 			tempArr.push( value )

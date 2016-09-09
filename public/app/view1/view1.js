@@ -7,8 +7,8 @@ angular.module('myApp.view1', ['ngRoute', 'ngSanitize'])
     controller: 'View1Ctrl'
   });
 }])
-.controller('View1Ctrl', [  '$scope', '$http', '$location', '$routeParams', function( $scope, $http, $location, $routeParams ) {
-	
+.controller('View1Ctrl', [  '$scope', '$http', '$location', '$routeParams', '$rootScope', function( $scope, $http, $location, $routeParams, $rootScope ) {
+	$rootScope.currentNavItem="home"
 	var tag = $routeParams.tag
 	$http.get('/main').success( function(response){	
 	$scope.username = response.username	

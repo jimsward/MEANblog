@@ -1,14 +1,10 @@
-.container { padding : 0; border : 1px solid #1fa67b !important }
-
 .navbar-form { padding : 0 }
 
 .navbar-fixed-top { text-align : center; }
 
 h1 { color : #00b7ff; }
 
-h2, h3 { color : #337ab7 }
-
-.clickable { text-decoration: underline; cursor:pointer }
+.clickable { text-decoration: none; cursor:pointer; color : #FF5722  }
 
 /* li { display : inline-block } */
 
@@ -16,7 +12,7 @@ h2, h3 { color : #337ab7 }
 
 hr { border-top: 1px solid #888; }
 
-#comments { color : #235580; font-size : 20px; }
+#comments { color : #000000; font-size : 20px; padding-bottom: 30px;}
 
 table { background-color : #eee }
 
@@ -44,3 +40,26 @@ h3#selectpost { color : #c502ae }
 .error { color : #ff0f0f; }
 
 #submitsignup { margin-top : 6px; }
+
+md-toolbar {color:#ffffff !important; font-size: 48px !important; width:inherit; box-shadow: 0px 0px 2px 2px}
+
+.md-nav-bar {
+    height: 54px !important;
+    background-color: transparent;
+    border-color: '{{foreground-4}}';
+}
+
+._md-nav-button {padding : 0 16px !important;}
+
+a {color:#FF5722}
+
+button {color:#ffffff !important;}
+
+textarea#commentBody {width:500px}
+
+form#commentform {padding-bottom: 100px}
+
+#commentTB {
+    width: 500px;}
+
+footer {background-color: #ccc}

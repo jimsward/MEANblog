@@ -30,8 +30,8 @@
 }
 
 .container {
-	padding : 40px; margin : 40px;
-	border : 1px solid #ddd;
+
+    margin-top: 140px;
 }
 /*
 h1 {
@@ -40,7 +40,6 @@ h1 {
 */
 #contact, #projects   { background-color: #FFFFFF;
 	width : 75% !important;
-    border: 1px solid #DADADA;
     border-radius: 8px 8px 8px 8px;
     padding: 25px 25px 25px 25px;
 	margin-top : 20px;
@@ -60,3 +59,9 @@ a { text-decoration : none; }
 .pbody, #commentbox {border : 1px solid #bbb; border-radius : 6px; margin:  20px 0; box-shadow : 10px 5px 5px #bcbcbc}
 
 code {background-color: #dddddd}
+
+md-toolbar.contact {border-radius: 6px 6px 0 0; padding-left: 10px}
+
+input {background-color: #ffffff}
+
+#inner-editor {background-color: #ffffff}
