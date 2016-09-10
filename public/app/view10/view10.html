@@ -1,12 +1,18 @@
 <div ng-controller="view10Ctrl" class="content">
-
+<md-content layout="row">
 <form id="contact" >
-    <md-toolbar class="contact">Contact Me</md-toolbar>
     <div><md-input-container><label>Name</label><input type="text" name="name" id="name" ng-model="contact.name" required/></md-input-container></div>
     <div><md-input-container><label>Email</label><input type="email" name="email" id="email" ng-model="contact.email" required/></md-input-container></div>
     <div><md-input-container><label></label></label><textarea name="message" id="message" placeholder="Message" ng-model="contact.message" required></textarea></md-input-container></div>
     <md-button class="md-accent md-raised" ng-click="contactform()">SEND</md-button>
   </form>
-
-
+<div id="info">
+<ul id="infoList">
+    <li>Or:</li>
+    <li>Jim Sward</li>
+    <li>Jim@JimSward.com</li>
+    <li>707-394-5027</li>
+</ul>
+</div>
+</md-content>
 </div>

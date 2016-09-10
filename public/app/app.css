@@ -41,14 +41,14 @@ h1 {
 #contact, #projects   { background-color: #FFFFFF;
 	width : 75% !important;
     border-radius: 8px 8px 8px 8px;
-    padding: 25px 25px 25px 25px;
+    padding: 0 0 75px ;
 	margin-top : 20px;
 }
 #projects li { display : block !important }
 
 label { margin-right : 40px; }
 
-form#contact { margin-top : 20px; width : 600px !important; }
+form#contact { padding-top : 20px; width : 600px !important; }
 
 textarea#message { width : 500px; height : 200px; margin-top : 10px }
 
