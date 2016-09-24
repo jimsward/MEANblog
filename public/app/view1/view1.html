@@ -1,9 +1,9 @@
 <div ng-controller="View1Ctrl">
 <div ng-hide="user"><p>You are not logged in!</p><span ng-click="login()">Login  </span>|<span ng-click="signUp()">Sign  Up</span></div>
-<div ng-show="user"><span>Welcome {{username}}</span><span ng-click="logout()">LOGOUT</span><ul class="nav nav-tabs">  
-    <li><a href="#/view3">NEW POST</a></li>
-     <li><a href="#/view4">ADMIN</a></li>
-     <li><a href="#/view11">EDIT POST</a></li></ul>
+<div ng-show="user"><span>Welcome {{username}}</span><span ng-click="logout()">LOGOUT</span>
+    <md-button class="clickable" href="#/view3">NEW POST</md-button>
+     <md-button class="clickable" href="#/view4">ADMIN</md-button>
+     <md-button class="clickable" href="#/view11">EDIT POST</md-button>
      </div>
 
 <div ng-repeat="post in myposts track by $index" >

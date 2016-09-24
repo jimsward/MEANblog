@@ -4,7 +4,7 @@
 
 h1 { color : #00b7ff; }
 
-.clickable { text-decoration: none; cursor:pointer; color : #FF5722  }
+.clickable { text-decoration: none; cursor:pointer; color : #FF5722 !important; }
 
 /* li { display : inline-block } */
 
@@ -69,3 +69,4 @@ div#info {width:400px; height:400px;  margin-top:40px}
 ul#infoList {margin-top:10px}
 
 ul#infoList > li {display:block !important; padding:15px; }
+
